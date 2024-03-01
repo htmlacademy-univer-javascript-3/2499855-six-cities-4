@@ -1,6 +1,6 @@
 
 function OfferNotLoggedScreen(): JSX.Element {
-    return (
+  return (
     <div className="page">
       <header className="header">
         <div className="container">
@@ -282,7 +282,7 @@ function OfferNotLoggedScreen(): JSX.Element {
         </div>
       </main>
     </div>
-    );
+  );
 }
 
 export default OfferNotLoggedScreen;
