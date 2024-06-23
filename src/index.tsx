@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './app';
-
-const Preset = {
-  placesCount: 16,
-} as const;
+import { MOCK_OFFERS } from './mocks/offers';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,6 +9,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App placesCount={Preset.placesCount} />
+    <App
+      offers = {MOCK_OFFERS}
+    />
   </React.StrictMode>
 );
