@@ -5,26 +5,28 @@ import OfferScreen from './pages/offer-screen/offer-screen';
 import ErrorScreen from './pages/error-screen/error-screen';
 import PrivateRoute from './components/private-routes/private-routes';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Offer } from './types';
 
 type AppComponentProps = {
-  placesCount: number;
+  offers: Offer[];
 }
 
-function App({placesCount}: AppComponentProps): JSX.Element {
+function App({ offers }: AppComponentProps): JSX.Element {
+  const favorites = offers.filter((i) => i.isFavorite);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element = {<MainScreen placesCount={placesCount} />} />
+        <Route path="/" element = {<MainScreen offers = { offers }/>} />
         <Route path="/login" element = {<LoginScreen />} />
         <Route
           path="/favorites"
           element = {
             <PrivateRoute>
-              <FavoritesScreen/>
+              <FavoritesScreen favorites = { favorites }/>
             </PrivateRoute>
           }
         />
-        <Route path="/offer/:id" element = {<OfferScreen />} />
+        <Route path="/offer/:id" element = {<OfferScreen offers = { offers }/>} />
         <Route path="*" element = {<ErrorScreen />} />
       </Routes>
     </BrowserRouter>
