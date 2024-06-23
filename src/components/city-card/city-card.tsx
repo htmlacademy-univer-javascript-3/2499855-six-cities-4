@@ -1,14 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Offer } from '../../types';
-import { Dispatch, SetStateAction } from 'react';
 
 type CardInfo = {
   offer: Offer;
-  onMouseEnter: Dispatch<SetStateAction<number | undefined>>;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function CityCard({offer, onMouseEnter}: CardInfo): JSX.Element {
+function CityCard({offer}: CardInfo): JSX.Element {
   return (
     <article className="cities__card place-card">
       <div className="cities__image-wrapper place-card__image-wrapper">
