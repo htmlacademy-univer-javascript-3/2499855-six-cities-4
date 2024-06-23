@@ -11,14 +11,8 @@ function App(): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path={AppRoute.Main}
-          element={<PageMain />}
-        />
-        <Route
-          path={AppRoute.Login}
-          element={<LoginPage />}
-        />
+        <Route path={AppRoute.Main} element={<PageMain />} />
+        <Route path={AppRoute.Login} element={<LoginPage />} />
         <Route
           path={AppRoute.Favorites}
           element={
@@ -27,14 +21,8 @@ function App(): JSX.Element {
             </PrivateRoute>
           }
         />
-        <Route
-          path={`${AppRoute.Offer}/:id`}
-          element={<OfferPage />}
-        />
-        <Route
-          path="*"
-          element={<NotFoundPage />}
-        />
+        <Route path={`${AppRoute.Offer}/:id`} element={<OfferPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
